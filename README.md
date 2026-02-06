@@ -53,16 +53,22 @@ two phases:
 ```text
 ml-project-premium-prediction/
 │
-├── app/
-│   ├── artifacts   # Trained ML model and scaler joblib files
-│   ├── main.py and prediction.py  # Streamlit application
+├── artifacts:
+    └── model_rest.joblib # Model for age group >25
+    └── model_young.joblib # Model for age group <=25
+    └── scaler_rest.joblib # Scaler for age group >25
+    └── scaler_young.joblib # Scaler for age group <=25
+        
+│   ├── main.py    # Streamlit application
+    └── prediction.py # backend processing
 │   └── requirements.txt    # App dependencies
 │
 ├── notebooks/
-│   └── model_training.ipynb
-│
+│   └── Healthcare_premium_prediction_rest_with_gr.ipynb # Model training for age group >25
+│   └── Healthcare_premium_prediction_young_with_gr.ipynb # Model training for age group <=25
 ├── data/
-│   └── insurance.xlsx
+│   └── premiums_rest.xlsx # Data for the age group >25
+    └── premiums_young_with_gr.xlsx # Data for the age group <=25
 │
 ├── README.md
 └── .gitignore
